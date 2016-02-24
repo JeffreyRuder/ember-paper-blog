@@ -1,5 +1,5 @@
 {{#paper-card}}
-  <div class="post-image" style="background: url('{{post.image_url}}') no-repeat center;background-size:fill;"></div>
+  <div class="post-image" style={{verifyUrl post.image_url}}></div>
   {{#paper-card-content}}
     <h2>{{post.title}}</h2>
     <h3><small>{{post.author}} &bull; {{moment-from-now post.timestamp}}</small></h3>
@@ -8,7 +8,7 @@
     </p>
   {{/paper-card-content}}
   <div class="md-actions" layout="row" layout-align="end center">
-    {{#paper-button action="transitionTo" param="post-new"}}Read More{{/paper-button}}
+    {{#link-to 'post' post.id}}Read More{{/link-to}}
     <!-- {{#paper-button}}Action 2{{/paper-button}} -->
   </div>
 {{/paper-card}}

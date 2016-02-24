@@ -1,0 +1,22 @@
+{{#paper-content class="md-whiteframe-z1"}}
+
+<div class="post-image" style={{verifyUrl model.image_url}}></div>
+<div class="post-entirety">
+  <div class="post-page-header">
+    <br>
+    <div class="post-details">
+      <h1>{{model.title}}</h1>
+      <p class="post-author">{{model.author}}</p>
+      <p>
+        <span class="post-timestamp">{{moment-from-now model.timestamp}}</span>
+        <span class="post-category">{{model.category}}</span>
+      </p>
+    </div>
+  </div>
+
+  <article>
+    {{markdown-to-html markdown=model.content}}
+  </article>
+</div>
+
+{{/paper-content}}
