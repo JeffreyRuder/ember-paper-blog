@@ -5,5 +5,6 @@ export default DS.Model.extend({
   timestamp: DS.attr(),
   title: DS.attr(),
   content: DS.attr(),
+  preview_content: DS.attr(),
   image_url: DS.attr()
 });
