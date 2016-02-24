@@ -5,6 +5,7 @@
 
   {{paper-input label="Author" value=author}}
   {{paper-input label="Title" value=title}}
+  {{paper-input label="Image URL" value=image_url}}
   {{paper-input textarea=true label="Content" value=content attr-spellcheck="true"
   event-enter=(action "updateCurrentContent")}}
   {{#paper-button raised=true action="savePost"}}Save Post{{/paper-button}}

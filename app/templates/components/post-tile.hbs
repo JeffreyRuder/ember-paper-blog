@@ -1,0 +1,11 @@
+{{#paper-card}}
+  <div class="post-image" style="background: url('{{post.image_url}}') no-repeat center;background-size:fill;"></div>
+  {{#paper-card-content}}
+    <h2>{{post.title}}</h2>
+
+  {{/paper-card-content}}
+  <div class="md-actions" layout="row" layout-align="end center">
+    {{#link-to 'index'}}{{#paper-button}}Read More{{/paper-button}}{{/link-to}}
+    <!-- {{#paper-button}}Action 2{{/paper-button}} -->
+  </div>
+{{/paper-card}}

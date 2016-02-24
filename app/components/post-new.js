@@ -13,7 +13,8 @@ export default Ember.Component.extend({
         author: this.get('author'),
         timestamp: Date.now(),
         title: this.get('title'),
-        content: this.get('content')
+        content: this.get('content'),
+        image_url: this.get('image_url')
       };
       this.sendAction('savePost', params);
     }
