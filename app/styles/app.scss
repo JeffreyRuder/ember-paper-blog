@@ -1,5 +1,18 @@
 @import 'ember-paper';
 
+.doc-content {
+  max-width: 60%;
+}
+
+.icons {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 md-toolbar.md-default-theme {
   background-color: tomato;
+}
+
+md-input-container {
+  padding: 20px;
 }

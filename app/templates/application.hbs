@@ -11,8 +11,9 @@
 
     {{#paper-content}}
       {{#paper-list}}
-        {{#paper-item action="transitionTo" param="about"}}About{{/paper-item}}
-        {{#paper-item action="transitionTo" param="index"}}Contact{{/paper-item}}
+        {{#paper-item action="transitionTo" param="about"}}{{paper-icon "info-outline" class="icons"}}About{{/paper-item}}
+        {{#paper-item action="transitionTo" param="contact"}}{{paper-icon "email" class="icons"}}Contact{{/paper-item}}
+        {{#paper-item action="transitionTo" param="post-new"}}{{paper-icon "add-circle-outline" class="icons"}}New Post{{/paper-item}}
       {{/paper-list}}
     {{/paper-content}}
   {{/paper-sidenav}}
@@ -28,7 +29,9 @@
     {{/paper-toolbar}}
 
     {{#paper-content class="md-padding"}}
-      {{outlet}}
+      <div class="doc-content">
+        {{outlet}}
+      </div>
     {{/paper-content}}
   </div>
 {{/paper-nav-container}}
