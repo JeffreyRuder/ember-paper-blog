@@ -1,16 +1,42 @@
-{{#paper-card}}
-  {{#paper-card-content}}
-    <div class="comment-entirety">
-      {{comment.content}}
-      <div class="comment-details">
-        <p>
-          {{moment-from-now comment.timestamp}}&nbsp;by&nbsp;{{comment.author}}
-        </p>
+{{#if showEditCommentForm}}
+  {{#paper-card}}
+    {{#paper-card-content}}
+      <div class="comment-entirety">
+        {{comment.content}}
+        <div class="comment-details">
+          <p>
+            {{moment-from-now comment.timestamp}}&nbsp;by&nbsp;{{comment.author}}
+          </p>
+        </div>
       </div>
-      <div class="md-actions" layout="row" layout-align="end center">
-        <!-- {{#paper-button icon-button=true action='showEditCommentForm' param=post}}{{paper-icon "edit" size=2}}{{/paper-button}} -->
-        {{#paper-button icon-button=true action='destroyComment' param=comment}}{{paper-icon "delete" size=2}}{{/paper-button}}
+
+      <div class="new-comment">
+        {{paper-divider}}
+
+        <h3 class="new-comment-header">Edit Comment</h3>
+        {{paper-input label="Content" value=content maxlength="100" maxlength-errortext="Enter 100 characters or less."}}
+        {{#paper-button raised=true action="editComment" param=comment}}Edit Comment{{/paper-button}}
+
       </div>
-    </div>
-  {{/paper-card-content}}
-{{/paper-card}}
+    {{/paper-card-content}}
+  {{/paper-card}}
+
+  {{else}}
+
+  {{#paper-card}}
+    {{#paper-card-content}}
+      <div class="comment-entirety">
+        {{comment.content}}
+        <div class="comment-details">
+          <p>
+            {{moment-from-now comment.timestamp}}&nbsp;by&nbsp;{{comment.author}}
+          </p>
+        </div>
+        <div class="md-actions" layout="row" layout-align="end center">
+          {{#paper-button icon-button=true action='displayEditCommentForm' }}{{paper-icon "edit" size=2}}{{/paper-button}}
+          {{#paper-button icon-button=true action='destroyComment' param=comment}}{{paper-icon "delete" size=2}}{{/paper-button}}
+        </div>
+      </div>
+    {{/paper-card-content}}
+  {{/paper-card}}
+{{/if}}

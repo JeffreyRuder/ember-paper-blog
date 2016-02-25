@@ -28,6 +28,18 @@ export default Ember.Route.extend({
       });
     },
 
+    editComment(comment, params) {
+      var route = this;
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!== undefined) {
+          comment.set(key, params[key]);
+        }
+      });
+      comment.save().then(function() {
+        route.refresh();
+      })
+    },
+
     destroyComment(comment) {
       var route = this;
       comment.destroyRecord().then(function() {
