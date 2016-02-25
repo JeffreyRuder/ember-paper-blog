@@ -10,5 +10,6 @@
   <div class="md-actions" layout="row" layout-align="end center">
     {{#link-to 'post' post.id}}Read More{{/link-to}}
     {{#paper-button icon-button=true action='goToEdit' param=post}}{{paper-icon "edit" size=2}}{{/paper-button}}
+    {{#paper-button icon-button=true action='deletePost' param=post}}{{paper-icon "delete" size=2}}{{/paper-button}}
   </div>
 {{/paper-card}}

@@ -8,6 +8,10 @@ export default Ember.Component.extend({
 
     goToEdit(post) {
       this.sendAction("goToEdit", post.id);
+    },
+
+    deletePost(post){
+      this.sendAction('deletePost', post);
     }
   }
 });

@@ -15,6 +15,13 @@ export default Ember.Route.extend({
 
     goToEdit(postID) {
       this.transitionTo('edit', postID);
+    },
+
+    deletePost(post) {
+      var route = this;
+      post.destroyRecord().then(function() {
+        route.refresh();
+      });
     }
   }
 });
