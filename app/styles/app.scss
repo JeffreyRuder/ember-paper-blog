@@ -6,7 +6,7 @@
 }
 
 .doc-content {
-  max-width: 60%;
+  max-width: 100%;
 }
 
 md-sidenav {
@@ -22,23 +22,33 @@ md-toolbar.md-default-theme {
   background-color: tomato;
 }
 
+.post-tile-author {
+  margin-bottom: 2px;
+}
+
+.post-tile-comment-total {
+  margin-top: 2px;
+}
+
 .new-post-input {
   md-input-container {
     padding: 20px;
   }
 }
 
-.post-entirety {
-  padding: 0 20px 20px 20px;
-}
-
-.comment-entirety {
-  padding: 20px;
-}
-
 .new-comment {
   margin-top: 40px;
   button {
     margin-bottom: 20px;
+  }
+}
+
+.comment-details, .comment-content {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1200px) {
+  .doc-content {
+    max-width: 60%;
   }
 }

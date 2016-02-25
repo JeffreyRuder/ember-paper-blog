@@ -6,6 +6,10 @@ export default Ember.Component.extend({
       this.sendAction("transitionTo", route);
     },
 
+    goToPost(post) {
+      this.sendAction("goToPost", post.id);
+    },
+
     goToEdit(post) {
       this.sendAction("goToEdit", post.id);
     },

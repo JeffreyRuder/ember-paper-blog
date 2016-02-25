@@ -12,11 +12,15 @@ export default Ember.Component.extend({
       this.set('showEditCommentForm', true);
     },
 
+    hideEditCommentForm()  {
+      this.set('showEditCommentForm', false);
+    },
+
     editComment(comment) {
       var params = {
         author: this.get('author'),
         content: this.get('content'),
-        timestamp: Date.now(),
+        edit_timestamp: Date.now(),
         post: this.get('post')
       };
       this.set('showEditCommentForm', false);

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  breadCrumb: 'Home',
+  
   model() {
     return this.store.findAll('post', {reload: true})
       .then(function(posts) {
@@ -11,6 +13,10 @@ export default Ember.Route.extend({
   actions: {
     transitionTo(route) {
       this.transitionTo(route);
+    },
+
+    goToPost(postID) {
+      this.transitionTo('post', postID);
     },
 
     goToEdit(postID) {

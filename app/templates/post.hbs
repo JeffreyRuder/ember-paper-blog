@@ -1,16 +1,14 @@
 {{#paper-card}}
+  <div class="post-image" style={{verifyUrl model.post.image_url}}></div>
   {{#paper-card-content}}
 
-    <div class="post-image" style={{verifyUrl model.post.image_url}}></div>
     <div class="post-entirety">
       <div class="post-page-header">
         <br>
         <div class="post-details">
-          <h1>{{model.post.title}}</h1>
-          <p class="post-author">{{model.post.author}}</p>
-          <p>
-            <span class="post-timestamp">{{moment-from-now model.post.timestamp}}</span>
-          </p>
+          <h2>{{model.post.title}}</h2>
+          <h3 class="post-tile-author"><small>{{model.post.author}} &bull; {{moment-from-now model.post.timestamp}}</small></h3>
+          <h4 class="post-tile-comment-total"><small>{{model.post.comments.length}} comments</small></h4>
         </div>
       </div>
 

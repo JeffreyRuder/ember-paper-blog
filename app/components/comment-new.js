@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   addNewComment: false,
+  validInput: false,
   currentContent: "Press enter when adding content to update preview.",
 
   actions: {
@@ -9,8 +10,26 @@ export default Ember.Component.extend({
       this.set('addNewComment', true);
     },
 
+    hideNewCommentForm() {
+      this.set('author', undefined);
+      this.set('content', undefined);
+      this.set('addNewComment', false);
+    },
+
     updateCurrentContent() {
       this.set('currentContent', this.get('content'));
+    },
+
+    checkValidity() {
+      var author = this.get('author');
+      var content = this.get('content');
+      if (author !== undefined && content !== undefined) {
+        if (author.length >= 9 && content.length >= 9 && content.length < 101) {
+          this.set('validInput', true);
+        } else {
+          this.set('validInput', false);
+        }
+      }
     },
 
     saveComment() {
@@ -18,9 +37,12 @@ export default Ember.Component.extend({
         author: this.get('author'),
         content: this.get('content'),
         timestamp: Date.now(),
+        edit_timestamp: null,
         post: this.get('post')
       };
-      this.set('addNewComment', false),
+      this.set('author', undefined);
+      this.set('content', undefined);
+      this.set('addNewComment', false);
       this.sendAction('saveComment', params);
     }
   }
