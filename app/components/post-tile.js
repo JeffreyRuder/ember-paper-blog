@@ -5,5 +5,9 @@ export default Ember.Component.extend({
     transitionTo(route) {
       this.sendAction("transitionTo", route);
     },
+
+    goToEdit(post) {
+      this.sendAction("goToEdit", post.id);
+    }
   }
 });

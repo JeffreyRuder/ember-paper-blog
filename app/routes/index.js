@@ -12,5 +12,9 @@ export default Ember.Route.extend({
     transitionTo(route) {
       this.transitionTo(route);
     },
+
+    goToEdit(postID) {
+      this.transitionTo('edit', postID);
+    }
   }
 });
