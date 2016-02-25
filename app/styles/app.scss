@@ -22,9 +22,25 @@ md-toolbar.md-default-theme {
   background-color: tomato;
 }
 
-md-input-container {
-  padding: 20px;
+.new-post-input {
+  md-input-container {
+    padding: 20px;
+  }
 }
+
 .post-entirety {
   padding: 0 20px 20px 20px;
+}
+
+.comment-entirety {
+  padding: 20px;
+}
+
+.new-comment {
+  .new-comment-header {
+    margin-bottom: -8px;
+  }
+  button {
+    margin-bottom: 20px;
+  }
 }

@@ -1,0 +1,16 @@
+{{#paper-card}}
+  {{#paper-card-content}}
+    <div class="comment-entirety">
+      {{comment.content}}
+      <div class="comment-details">
+        <p>
+          {{moment-from-now comment.timestamp}}&nbsp;by&nbsp;{{comment.author}}
+        </p>
+      </div>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <!-- {{#paper-button icon-button=true action='showEditCommentForm' param=post}}{{paper-icon "edit" size=2}}{{/paper-button}} -->
+        {{#paper-button icon-button=true action='destroyComment' param=comment}}{{paper-icon "delete" size=2}}{{/paper-button}}
+      </div>
+    </div>
+  {{/paper-card-content}}
+{{/paper-card}}

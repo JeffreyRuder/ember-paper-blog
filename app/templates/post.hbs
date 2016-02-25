@@ -1,22 +1,28 @@
-{{#paper-content class="md-whiteframe-z1"}}
+{{#paper-card}}
+  {{#paper-card-content}}
 
-<div class="post-image" style={{verifyUrl model.image_url}}></div>
-<div class="post-entirety">
-  <div class="post-page-header">
-    <br>
-    <div class="post-details">
-      <h1>{{model.title}}</h1>
-      <p class="post-author">{{model.author}}</p>
-      <p>
-        <span class="post-timestamp">{{moment-from-now model.timestamp}}</span>
-        <span class="post-category">{{model.category}}</span>
-      </p>
+    <div class="post-image" style={{verifyUrl model.post.image_url}}></div>
+    <div class="post-entirety">
+      <div class="post-page-header">
+        <br>
+        <div class="post-details">
+          <h1>{{model.post.title}}</h1>
+          <p class="post-author">{{model.post.author}}</p>
+          <p>
+            <span class="post-timestamp">{{moment-from-now model.post.timestamp}}</span>
+          </p>
+        </div>
+      </div>
+
+      <article>
+        {{markdown-to-html markdown=model.post.content}}
+      </article>
+
+      {{comment-new post=model.post saveComment="saveComment"}}
     </div>
-  </div>
+  {{/paper-card-content}}
+{{/paper-card}}
 
-  <article>
-    {{markdown-to-html markdown=model.content}}
-  </article>
-</div>
-
-{{/paper-content}}
+{{#each model.comments as |comment|}}
+  {{comment-tile comment=comment destroyComment="destroyComment"}}
+{{/each}}
