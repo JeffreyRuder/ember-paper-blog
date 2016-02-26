@@ -5,7 +5,7 @@
     <h3 class="post-tile-author"><small>{{post.author}} &bull; {{moment-from-now post.timestamp}}</small></h3>
     <h4 class="post-tile-comment-total"><small>{{post.comments.length}} comments</small></h4>
     <p>
-      {{post.preview_content}}
+      {{markdown-to-html markdown=post.preview_content}}
     </p>
   {{/paper-card-content}}
 
