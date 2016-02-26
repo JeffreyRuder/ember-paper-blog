@@ -52,3 +52,9 @@ md-toolbar.md-default-theme {
     max-width: 60%;
   }
 }
+
+@media (min-width: 1200px) {
+  .doc-content {
+    max-width: 50%;
+  }
+}
