@@ -8,7 +8,6 @@ export default Ember.Component.extend({
     },
 
     editComment(comment, params) {
-      this.set('showEditCommentForm', false);
       this.sendAction('editComment', comment, params);
     }
   }
