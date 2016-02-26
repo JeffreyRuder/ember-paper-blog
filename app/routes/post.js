@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model(params) {
     return Ember.RSVP.hash({
       post: this.store.findRecord('post', params.post_id),
-      comments: this.store.query('comment', {filter: {post: params}})
+      comments: this.store.query('comment', {filter: {post: params.post_id}})
         .then(function(comments) {
           return comments.sortBy('timestamp').reverse()
         })

@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   showEditCommentForm: false,
+  validInput: false,
 
   actions: {
     destroyComment(comment) {
@@ -14,6 +15,17 @@ export default Ember.Component.extend({
 
     hideEditCommentForm()  {
       this.set('showEditCommentForm', false);
+    },
+
+    checkValidity() {
+      var content = this.get('content');
+      if (content !== undefined) {
+        if (content.length >= 9 && content.length < 101) {
+          this.set('validInput', true);
+        } else {
+          this.set('validInput', false);
+        }
+      }
     },
 
     editComment(comment) {

@@ -21,6 +21,4 @@
   {{/paper-card-content}}
 {{/paper-card}}
 
-{{#each model.comments as |comment|}}
-  {{comment-tile comment=comment destroyComment="destroyComment" editComment="editComment"}}
-{{/each}}
+{{post-all-comments post=model.post destroyComment="destroyComment" editComment="editComment"}}
