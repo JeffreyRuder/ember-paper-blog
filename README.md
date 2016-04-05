@@ -1,7 +1,6 @@
 # Blog
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A blog template created as practice with objects and routing in Ember. Also involved practice with using the Ember Paper add-on.
 
 ## Prerequisites
 
